@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import './App.css'
+import ShortenLink from './pages/ShortenLink'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div className='text-success'>Added the required libraries</div>
-    </>
+    <ShortenLink/>
   )
 }
 
