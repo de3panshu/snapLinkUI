@@ -45,11 +45,11 @@ jobs:
           script: |
             IMAGE=${{ secrets.DOCKER_USERNAME }}/snaplink-ui
 
-            docker pull $IMAGE:latest
-            docker stop snaplink-ui || true
-            docker rm snaplink-ui || true
+            sudo docker pull $IMAGE:latest
+            sudo docker stop snaplink-ui || true
+            sudo docker rm snaplink-ui || true
 
-            docker run -d \
+            sudo docker run -d \
               --restart unless-stopped \
               -p 80:80 \
               --name snaplink-ui \
