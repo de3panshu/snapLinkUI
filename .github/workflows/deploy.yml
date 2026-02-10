@@ -37,7 +37,7 @@ jobs:
       # Step 5: Build and push Docker image
       - name: Build & Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest .
+          docker build -f DockerFile -t ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest .
           docker tag ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
           docker push ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
