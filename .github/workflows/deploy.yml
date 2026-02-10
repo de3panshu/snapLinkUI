@@ -28,6 +28,7 @@ jobs:
           SHA=${{ github.sha }}
 
           docker build -f DockerFile \
+            -t $IMAGE:latest \
             -t $IMAGE:$BRANCH \
             -t $IMAGE:$BRANCH-$SHA .
             
