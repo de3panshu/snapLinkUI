@@ -37,10 +37,10 @@ jobs:
       # Step 5: Build and push Docker image
       - name: Build & Push Docker Image
         run: |
-          docker build -f DockerFile -t ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
+          sudo docker build -f DockerFile -t ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest .
+          sudo docker tag ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
           docker push ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
+          sudo docker push ${{ secrets.DOCKER_USERNAME }}/snaplink-ui:v1.0.1
 
       # Step 6: SSH to EC2 and update container
       - name: Deploy to EC2
